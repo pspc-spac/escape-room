@@ -1,8 +1,16 @@
-var answer1 = "answer1";
-var answer2 = "answer2";
-var answer3 = "answer3";
-var answer4 = "answer4";
-var answer5 = "answer5";
+var answer1 = "076205613"; // scavenger hunt
+var answer2 = "111210211011"; // time zones
+var answer3 = "5112"; // book
+var answer4 = "eye3"; // arduino
+var answer5 = "54531"; // count items
+var answer6 = "Green"; // thermometer
+
+//  var answer1 = ""; // scavenger hunt
+//  var answer2 = ""; // time zones
+//  var answer3 = ""; // book
+//  var answer4 = "eye3"; // arduino
+//  var answer5 = ""; // thermometer
+//  var answer6 = "Green"; // thermometer
 
 var firstPage = $("#intro");
 var startBtn = $(".start-btn.beg");
@@ -15,6 +23,7 @@ var clue2 = $("#clue-2");
 var clue3 = $("#clue-3");
 var clue4 = $("#clue-4");
 var clue5 = $("#clue-5");
+var clue6 = $("#clue-6");
 
 var lock1 = $(".lock-1");
 var lock2 = $(".lock-2");
@@ -26,6 +35,7 @@ var pass2 = $("#password2");
 var pass3 = $("#password3");
 var pass4 = $("#password4");
 var pass5 = $("#password5");
+var pass6 = $("#password6");
 
 var clone = $(".clone");
 endPg.hide();
@@ -35,6 +45,7 @@ clue2.hide();
 clue3.hide();
 clue4.hide();
 clue5.hide();
+clue6.hide();
 
 lock2.hide();
 lock3.hide();
@@ -118,7 +129,7 @@ $("#dropzone").droppable({
       $(".laser-beam").hide();
       $(".laser-beam").css("animation-play-state", "paused");
 
-      if (ui.draggable.attr("id") == "eye2") {
+      if (ui.draggable.attr("id") == answer4) {
         lock4.fadeOut("fast", function () {
           clue5.fadeIn("slow");
         });
@@ -140,27 +151,10 @@ $("#dropzone").droppable({
   },
 });
 
-$("#clue-4 i").click(function () {
-  if (pass4.val() == answer4) {
-    clue4.fadeOut("fast", function () {
-      clue5.fadeIn("slow");
-    });
-  } else {
-    $("#clue-4 div.error").removeAttr("hidden");
-  }
-});
-$(pass4).keypress(function (e) {
-  if (e.which == 13) {
-    $("#clue-4 #pass-submit").click();
-  } else {
-    $("#clue-4 div.error").attr("hidden", true);
-  }
-});
-
 $("#clue-5 i").click(function () {
   if (pass5.val() == answer5) {
     clue5.fadeOut("fast", function () {
-      endPg.fadeIn("slow");
+      clue6.fadeIn("slow");
     });
   } else {
     $("#clue-5 div.error").removeAttr("hidden");
@@ -171,6 +165,23 @@ $(pass5).keypress(function (e) {
     $("#clue-5 #pass-submit").click();
   } else {
     $("#clue-5 div.error").attr("hidden", true);
+  }
+});
+
+$("#clue-6 i").click(function () {
+  if (pass6.val().toLowerCase() == answer6.toLowerCase()) {
+    clue6.fadeOut("fast", function () {
+      endPg.fadeIn("slow");
+    });
+  } else {
+    $("#clue-6 div.error").removeAttr("hidden");
+  }
+});
+$(pass6).keypress(function (e) {
+  if (e.which == 13) {
+    $("#clue-6 #pass-submit").click();
+  } else {
+    $("#clue-6 div.error").attr("hidden", true);
   }
 });
 

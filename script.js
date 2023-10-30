@@ -1,16 +1,16 @@
-var answer1 = "076205613"; // scavenger hunt
+var answer1 = "012205613"; // scavenger hunt
 var answer2 = "111210211011"; // time zones
 var answer3 = "5112"; // book
 var answer4 = "eye3"; // arduino
 var answer5 = "54531"; // count items
 var answer6 = "Green"; // thermometer
 
-//  var answer1 = ""; // scavenger hunt
-//  var answer2 = ""; // time zones
-//  var answer3 = ""; // book
-//  var answer4 = "eye3"; // arduino
-//  var answer5 = ""; // thermometer
-//  var answer6 = "Green"; // thermometer
+ //var answer1 = ""; // scavenger hunt
+ //var answer2 = ""; // time zones
+ //var answer3 = ""; // book
+ //var answer4 = "eye3"; // arduino
+ //var answer5 = ""; // thermometer
+ //var answer6 = "Green"; // thermometer
 
 var firstPage = $("#intro");
 var startBtn = $(".start-btn.beg");

@@ -1,5 +1,5 @@
-var answer1 = "012205613"; // scavenger hunt
-var answer2 = "111210211011"; // time zones
+var answer1 = "111210211011"; // time zones
+var answer2 = "012205613"; // scavenger hunt
 var answer3 = "5112"; // book
 var answer4 = "eye3"; // arduino
 var answer5 = "54531"; // count items

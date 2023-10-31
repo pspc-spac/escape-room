@@ -161,6 +161,13 @@ $("#clue-5 i").click(function () {
     });
   } else {
     $("#clue-5 div.error").removeAttr("hidden");
+
+    if (pass5.val() 
+        && pass5.val().substring(1) == answer5.substring(1) 
+        && pass5.val().charAt(0) == 4)
+    {
+      $("#clue-5 div.error-hint").removeAttr("hidden");
+    }
   }
 });
 $(pass5).keypress(function (e) {
@@ -168,6 +175,7 @@ $(pass5).keypress(function (e) {
     $("#clue-5 #pass-submit").click();
   } else {
     $("#clue-5 div.error").attr("hidden", true);
+    $("#clue-5 div.error-hint").attr("hidden", true);
   }
 });
 

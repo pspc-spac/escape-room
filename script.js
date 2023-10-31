@@ -5,12 +5,12 @@ var answer4 = "eye3"; // arduino
 var answer5 = "54531"; // count items
 var answer6 = "Green"; // thermometer
 
- //var answer1 = ""; // scavenger hunt
- //var answer2 = ""; // time zones
- //var answer3 = ""; // book
- //var answer4 = "eye3"; // arduino
- //var answer5 = ""; // thermometer
- //var answer6 = "Green"; // thermometer
+//var answer1 = ""; // scavenger hunt
+//var answer2 = ""; // time zones
+//var answer3 = ""; // book
+//var answer4 = "eye3"; // arduino
+//var answer5 = ""; // thermometer
+//var answer6 = "Green"; // thermometer
 
 var firstPage = $("#intro");
 var startBtn = $(".start-btn.beg");

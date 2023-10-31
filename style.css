@@ -466,3 +466,26 @@ img.qr {
     top: 98%;
   }
 }
+
+
+#progressBar {
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  margin: 10px auto;
+  height: 22px;
+  background-color: black;
+}
+
+#progressBar div {
+  height: 100%;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  width: 0;
+  background-color: lightgray;
+  box-sizing: border-box;
+  font: "Fira Sans", sans-serif;
+  font-weight: bold;
+}

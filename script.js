@@ -37,9 +37,14 @@ var pass4 = $("#password4");
 var pass5 = $("#password5");
 var pass6 = $("#password6");
 
+var progressBar = $("#progressBar");
+
 var clone = $(".clone");
 endPg.hide();
 wrongPg.hide();
+
+progressBar.hide();
+
 clue1.hide();
 clue2.hide();
 clue3.hide();
@@ -53,15 +58,40 @@ lock4.hide();
 $(".laser-beam").hide();
 //startBtn.hide();
 
+var timeLeft = 30 * 60;
+var timeTotal = 30 * 60;
+
 startBtn.click(function () {
   firstPage.fadeOut("fast", function () {
     clue1.fadeIn("slow");
+
+    progressBar.fadeIn("slow");
+    progress(timeLeft, timeTotal, progressBar);
   });
 });
 
 $(".trigger").click(function () {
   $(".modal-wrapper").toggleClass("open");
+
 });
+
+var timeout;
+
+function progress(timeleft, timetotal, $element, timePenalty = false) {
+    var progressBarWidth = timeleft * $element.width() / timetotal;
+    $element.find('div').animate({ width: progressBarWidth }, 500).html(Math.floor(timeleft/60) + ":"+ timeleft%60);
+    if(timeleft > 0) {
+        if (timePenalty == true) {
+          clearTimeout(timeout);
+        }
+
+        timeout = setTimeout(function() {
+            timeLeft = timeLeft - 1;
+            progress(timeLeft, timetotal, $element);
+        }, 1000);
+    }
+};
+
 
 //1. Password
 
@@ -72,6 +102,7 @@ $("#clue-1 i").click(function () {
     });
   } else {
     $("#clue-1 div.error").removeAttr("hidden");
+
   }
 });
 $(pass1).keypress(function (e) {
@@ -135,6 +166,9 @@ $("#dropzone").droppable({
         });
       } else {
         $(".lock-4 div.error").removeAttr("hidden");
+
+        timeLeft -= 60;
+        progress(timeLeft, timeTotal, progressBar, true);
       }
     }, 4000);
   },
@@ -175,6 +209,9 @@ $("#clue-6 i").click(function () {
     });
   } else {
     $("#clue-6 div.error").removeAttr("hidden");
+
+    timeLeft -= 30;
+    progress(timeLeft, timeTotal, progressBar, true);
   }
 });
 $(pass6).keypress(function (e) {

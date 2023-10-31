@@ -12,6 +12,10 @@
   <body>
     <!-- partial:index.partial.html -->
     <!--WORKS BEST IN FULL SCREEN!!!-->
+    <div id="progressBar">
+      <div class="bar"></div>
+    </div>
+
     <div id="intro">
       <div class="row">
         <div class="col-md-7 mx-auto">
@@ -185,7 +189,7 @@
                   To identify the correct eyeball, press any button on the circuit on the table... the answer will flash when you beat the game!
                 </p>
                 <p>
-                  Be careful -- each time you scan the wrong eyeball, we introduce a 2 minute penalty!
+                  Be careful -- each time you scan the wrong eyeball, we introduce a <b>1 minute penalty</b>!
                 </p>
               </div>
             </div>
@@ -269,6 +273,11 @@
           Incorrect - please try again!
         </div>
       </div>
+      <div class="row error-hint mt-5" hidden>
+        <div class="col-md-7 mx-auto text-center">
+          Hint: You're on the right <b>track</b>!
+        </div>
+      </div>
     </div>
 
     <div id="clue-6" class="container">
@@ -285,7 +294,7 @@
                   coded.
                 </p>
                 <p>
-                  Be careful -- each wrong guess will cost you 30 seconds!
+                  <b>Be careful -- each wrong guess will cost you 30 seconds!</b>
                 </p>
               </div>
             </div>
